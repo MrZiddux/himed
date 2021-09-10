@@ -25,10 +25,10 @@ class Navbar extends Component
     {
         $navbar = [
             'Beranda' => '/',
-            'Tentang Kami' => '/tentangkami',
-            'Layanan' => '/layanan',
-            'Blog' => '/blog',
-            'Bermitra' => '/bermitra',
+            'Tentang Kami' => 'about',
+            'Layanan' => 'services',
+            'Blog' => 'blogs',
+            'Bermitra' => 'bermitra',
         ];
         return view('layouts.navbar', compact('navbar'));
     }
