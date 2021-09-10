@@ -161,15 +161,15 @@
 					<div class="row row-cols-2 row-cols-md-3 g-3 justify-content-center">
 						<div class="col">
 							<p class="t-size-sm t-color-white t-semibold text-center text-md-start">Tertarik untuk bermitra?</p>
-							<button class="btn bg-color-white t-color-primary t-semibold hover-btn-color-white t-size-sm d-block mx-auto d-md-inline-block mx-md-0">Bermitra Dengan Kami</button>
+							<button class="btn bg-color-white t-color-primary t-semibold hover-btn-color-white t-size-sm d-block mx-auto d-md-inline-block mx-md-0 transition">Bermitra Dengan Kami</button>
 						</div>
 						<div class="col">
 							<p class="t-size-sm t-color-white t-semibold text-center text-md-start">Tertarik untuk bermitra?</p>
-							<button class="btn bg-color-white t-color-primary t-semibold hover-btn-color-white t-size-sm d-block mx-auto d-md-inline-block mx-md-0">Bermitra Dengan Kami</button>
+							<button class="btn bg-color-white t-color-primary t-semibold hover-btn-color-white t-size-sm d-block mx-auto d-md-inline-block mx-md-0 transition">Bermitra Dengan Kami</button>
 						</div>
 						<div class="col">
 							<p class="t-size-sm t-color-white t-semibold text-center text-md-start">Tertarik coba aplikasi</p>
-							<button class="btn bg-color-white t-color-primary t-semibold hover-btn-color-white t-size-sm d-block mx-auto d-md-inline-block mx-md-0">Hubungi Kami</button>
+							<button class="btn bg-color-white t-color-primary t-semibold hover-btn-color-white t-size-sm d-block mx-auto d-md-inline-block mx-md-0 transition">Hubungi Kami</button>
 						</div>
 					</div>
 				</div>
