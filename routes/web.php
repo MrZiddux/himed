@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,3 +19,9 @@ Route::view('/', 'index');
 Route::view('about', 'about');
 Route::view('services', 'services');
 Route::view('blogs', 'blogs');
+
+// Admin
+Route::prefix('dashboard')->group(function () {
+  Route::view('/', 'admin.pages.home.index');
+  Route::resource('/article', ArticleController::class);
+});
