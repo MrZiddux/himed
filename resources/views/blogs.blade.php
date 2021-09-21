@@ -1,6 +1,30 @@
 <x-applayout title="Blogs">
 	<div class="container-fluid py-5">
 		<div class="container">
+			<div class="row g-3 mb-3">
+				<div class="col-8">
+					<img src="/images/image-6.png" alt="Article Populer" class="img-full">
+				</div>
+				<div class="col-4">
+					<div class="row g-3">
+						<div class="col-auto">
+							<img src="/images/image-5.png" alt="Article Populer" class="img-full d-block">
+						</div>
+						<div class="col-auto">
+							<img src="/images/image-5.png" alt="Article Populer" class="img-full d-block">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-cols-3 g-3">
+				<div class="col"><img src="/images/image-5.png" alt="Article Populer" class="img-full"></div>
+				<div class="col"><img src="/images/image-5.png" alt="Article Populer" class="img-full"></div>
+				<div class="col"><img src="/images/image-5.png" alt="Article Populer" class="img-full"></div>
+			</div>	
+		</div>
+	</div>
+	<div class="container-fluid py-5">
+		<div class="container">
 			<h6 class="t-size-md t-bold t-color-primary text-center">Artikel Kesehatan</h6>
 			<h6 class="t-size t-semibold">Artikel <span class="t-size t-semibold t-color-primary">Terpopuler</span></h6>
 			<div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 align-items-center g-3">
