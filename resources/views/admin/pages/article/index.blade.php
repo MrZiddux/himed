@@ -26,8 +26,8 @@
               <td>{{ str_replace('|', ', ', $item->tags) }}</td>
               <td>
                 <a href="{{ route('article.edit', $item->slug) }}" class="btn btn-success mr-1">Edit</a>
-                <div class="btn btn-primary" onclick="alert('Belum ada Halaman detail artikel, si ziyad gk ada kabar')">View</div>
-                <div class="btn btn-danger btn-delete" data-id="{{ route('article.show', $item->id) }}" data-toggle="modal" data-target="#modalDelete">
+                <a href="/blogs/{{ $item->slug }}" class="btn btn-dark">View</a>
+                <div class="btn btn-danger btn-delete" data-id="{{ route('article.destroy', $item->id) }}" data-toggle="modal" data-target="#modalDelete">
                   Delete
                 </div>
               </td>

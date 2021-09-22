@@ -74,6 +74,25 @@ class Article extends Model
     public function deleteArticle($id)
     {
         return $this->findOrFail($id)->delete();
+    }
 
+    public function limitData($limit)
+    {
+        return $this->paginate($limit);
+    }
+
+    public function popularData()
+    {
+        return $this->orderBy('created_at', 'DESC')->get();
+    }
+
+    public function getDataByTags($tag, $limit)
+    {
+        return $this->where('tags', 'LIKE', '%'.$tag.'%')->paginate($limit);
+    }
+
+    public function getDataByTitle($keyword, $limit)
+    {
+        return $this->where('title', 'LIKE', '%'.$keyword.'%')->paginate($limit);
     }
 }

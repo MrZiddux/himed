@@ -30,6 +30,26 @@ class ArticleService
     return $this->Article->getDataBySlug($slug);
   }
 
+  public function getDataPaginate($limit)
+  {
+    return $this->Article->limitData($limit);
+  }
+
+  public function getPopularData()
+  {
+    return $this->Article->popularData();
+  }
+
+  public function getDataTags($tag, $limit)
+  {
+    return $this->Article->getDataByTags($tag, $limit);
+  }
+
+  public function getDataTitle($keyword, $limit)
+  {
+    return $this->Article->getDataByTitle($keyword, $limit);
+  }
+
   private function imageHandler($payload)
   {
     $filename = null;

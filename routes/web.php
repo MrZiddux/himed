@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,11 +21,24 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'index');
 Route::view('about', 'about');
 Route::view('services', 'services');
-Route::view('blogs', 'blogs');
-Route::view('blogs/detail/judul_blog', 'detail-blogs');
+Route::get('blogs', [PageController::class, 'blogsPage']);
+Route::get('blogs/{slug}', [PageController::class, 'detailBlogPage']);
+Route::get('blogs/tag/{tag}', [PageController::class, 'blogsPageByTag']);
+Route::get('blogs', [PageController::class, 'blogsPageByKeyword'])->name('blog.search');
 
 // Admin
 Route::prefix('dashboard')->group(function () {
-  Route::view('/', 'admin.pages.home.index');
-  Route::resource('/article', ArticleController::class);
+  Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::resource('/user', UserController::class);
+  });
+  Route::middleware(['auth'])->group(function () {
+    Route::get('/', [DashboardController::class, 'index']);
+    Route::resource('/article', ArticleController::class);
+    Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+  });
+});
+
+Route::middleware(['guest'])->group(function () {
+  Route::get('login', [AuthController::class, 'index']);
+  Route::post('login', [AuthController::class, 'authenticate'])->name('login');
 });

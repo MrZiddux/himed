@@ -77,54 +77,19 @@
 		<div class="container">
 			<h6 class="t-size t-semibold">Artikel <span class="t-size t-semibold t-color-primary">Terpopuler</span></h6>
 			<div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 align-items-center g-3">
+				@foreach ($data as $item)
 				<div class="col">
-					<a href="#" class="text-decoration-none">
-						<img src="/images/image-3.png" alt="Populer Artikel Image" class="img-fluid">
-						<p class="t-size-sm t-color-lightgray text-center mt-1 mb-0">- Tips Kesehatan -</p>
-						<h6 class="t-size t-semibold text-center">Tips Atasi Demam Pada Anak Menurut Para Ahli</h6>
-						<p class="t-size-sm t-color-lightgray text-center">24 Mei 2021 | Madtive Studio</p>
+					<a href="/blogs/{{ $item->slug }}" class="text-decoration-none">
+						<img src="/images/uploads/articles/{{ $item->thumbnail }}" alt="Populer Artikel Image" class="img-fluid">
+						@php
+							$tags = explode('|', $item->tags);
+						@endphp
+						<p class="t-size-sm t-color-lightgray text-center mt-1 mb-0">- {{ $tags[0] }} -</p>
+						<h6 class="t-size t-semibold text-center">{{ $item->title }}</h6>
+						<p class="t-size-sm t-color-lightgray text-center">{{ date('d F Y', strtotime($item->created_at)) }} | {{ $item->author }}</p>
 					</a>
 				</div>
-				<div class="col">
-					<a href="#" class="text-decoration-none">
-						<img src="/images/image-3.png" alt="Populer Artikel Image" class="img-fluid">
-						<p class="t-size-sm t-color-lightgray text-center mt-1 mb-0">- Tips Kesehatan -</p>
-						<h6 class="t-size t-semibold text-center">Tips Atasi Demam Pada Anak Menurut Para Ahli</h6>
-						<p class="t-size-sm t-color-lightgray text-center">24 Mei 2021 | Madtive Studio</p>
-					</a>
-				</div>
-				<div class="col">
-					<a href="#" class="text-decoration-none">
-						<img src="/images/image-3.png" alt="Populer Artikel Image" class="img-fluid">
-						<p class="t-size-sm t-color-lightgray text-center mt-1 mb-0">- Tips Kesehatan -</p>
-						<h6 class="t-size t-semibold text-center">Tips Atasi Demam Pada Anak Menurut Para Ahli</h6>
-						<p class="t-size-sm t-color-lightgray text-center">24 Mei 2021 | Madtive Studio</p>
-					</a>
-				</div>
-				<div class="col">
-					<a href="#" class="text-decoration-none">
-						<img src="/images/image-3.png" alt="Populer Artikel Image" class="img-fluid">
-						<p class="t-size-sm t-color-lightgray text-center mt-1 mb-0">- Tips Kesehatan -</p>
-						<h6 class="t-size t-semibold text-center">Tips Atasi Demam Pada Anak Menurut Para Ahli</h6>
-						<p class="t-size-sm t-color-lightgray text-center">24 Mei 2021 | Madtive Studio</p>
-					</a>
-				</div>
-				<div class="col">
-					<a href="#" class="text-decoration-none">
-						<img src="/images/image-3.png" alt="Populer Artikel Image" class="img-fluid">
-						<p class="t-size-sm t-color-lightgray text-center mt-1 mb-0">- Tips Kesehatan -</p>
-						<h6 class="t-size t-semibold text-center">Tips Atasi Demam Pada Anak Menurut Para Ahli</h6>
-						<p class="t-size-sm t-color-lightgray text-center">24 Mei 2021 | Madtive Studio</p>
-					</a>
-				</div>
-				<div class="col">
-					<a href="#" class="text-decoration-none">
-						<img src="/images/image-3.png" alt="Populer Artikel Image" class="img-fluid">
-						<p class="t-size-sm t-color-lightgray text-center mt-1 mb-0">- Tips Kesehatan -</p>
-						<h6 class="t-size t-semibold text-center">Tips Atasi Demam Pada Anak Menurut Para Ahli</h6>
-						<p class="t-size-sm t-color-lightgray text-center">24 Mei 2021 | Madtive Studio</p>
-					</a>
-				</div>
+				@endforeach
 			</div>
 		</div>
 	</div>

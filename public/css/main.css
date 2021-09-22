@@ -97,3 +97,7 @@ textarea.textarea-custom
 	-webkit-line-clamp: 2 !important; /* number of lines to show */
 	-webkit-box-orient: vertical !important;
 }
+
+.content img {
+	max-width: 100%;
+}

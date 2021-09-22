@@ -18,8 +18,10 @@
         </a>
 
         <div class="user-menu dropdown-menu">
-
-          <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+          <form action="{{ route('logout') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <button type="submit" class="btn nav-link">Logout</button>
+          </form>
         </div>
       </div>
     </div>

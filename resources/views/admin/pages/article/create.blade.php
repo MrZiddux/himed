@@ -24,6 +24,14 @@
           <div class="mb-3">
             <label class="form-label">Tags</label>
             <select class="select-tags form-control multiselect" name="tags[]" multiple="multiple" required>
+              @php
+                $tags = old('tags');
+              @endphp
+              @if ($errors->any())
+                @for ($i = 0; $i < count(old('tags')); $i++)
+                  <option value="{{ $tags[$i] }}" selected="selected">{{ $tags[$i] }}</option>
+                @endfor
+              @endif
             </select>
           </div>
           <div class="mb-3">
@@ -54,6 +62,11 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('/admin/vendor/ckeditor/styles.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('/admin/vendor/dropify/dropify.css') }}">
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<style>
+  .select2 {
+    width:100%!important;
+  }
+</style>
 @endpush
 @push('script')
 <script src="{{ asset('admin/vendor/jQuery/jquery-3.6.0.min.js') }}"></script>

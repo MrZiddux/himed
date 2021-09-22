@@ -19,7 +19,31 @@
             </li>
           </ul>
         </li>
+        @if (auth()->user()->role == 'admin')
+          <li class="menu-item-has-children dropdown">
+            <a href="#" class="dropdown-toggle" id="userNav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>User Management</a>
+            <ul class="sub-menu children dropdown-menu">
+              <li>
+                <i class="menu-icon fa fa-th"></i>
+                <a class="nav-link {{ request()->is('dashboard/user') ? 'active' : '' }}" href="{{ route('user.index') }}">All User</a>
+              </li>
+            </ul>
+          </li>
+        @endif
       </ul>
     </div>
   </nav>
 </aside>
+@push('script')
+<script>
+  $(function() {
+    let url = window.location.href;
+    let a = document.querySelectorAll('.sub-menu a');
+    for(let i = 0; i < a.length; i++) {
+      if(a[i].getAttribute('href') == url) {
+        a[i].closest('.menu-item-has-children').querySelector('.dropdown-toggle').click();
+      }
+    }
+  });
+</script>
+@endpush
