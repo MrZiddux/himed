@@ -17,3 +17,4 @@ Route::view('/', 'index');
 Route::view('about', 'about');
 Route::view('services', 'services');
 Route::view('blogs', 'blogs');
+Route::view('blogs/detail/judul_blog', 'detail-blogs');
