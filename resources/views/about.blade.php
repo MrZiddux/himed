@@ -4,7 +4,9 @@
 		<div class="container">
 			<h6 class="t-size-md t-bold t-color-primary text-center">Tentang Kami</h6>
 			<p class="t-size t-color-secondary text-center">Ekosistem dalam bidang kesehatan yang saling terintegrasi dan terstandarisasi dengan teknologi informasi</p>
-			<a href="#"><img src="/images/thumbnail-video.png" alt="Youtube Video" class="img-fluid d-block mx-auto"></a>
+			<div class="d-flex justify-content-center">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/hoFbivqok2o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
 		</div>
 	</div>
 
@@ -33,6 +35,12 @@
 					<img src="/images/himed-illustration.png" alt="Himed Illustration" class="img-fluid">
 				</div>
 			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid py-5">
+		<div class="container">
+			<div id="map"></div>
 		</div>
 	</div>
 
