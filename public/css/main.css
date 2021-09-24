@@ -101,3 +101,7 @@ textarea.textarea-custom
 .content img {
 	max-width: 100%;
 }
+
+.ww-break-word {
+	word-break: break-word;
+}
