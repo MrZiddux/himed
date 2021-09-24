@@ -48,7 +48,7 @@
 <script>
   $(document).ready(function() {
     $('#table-id').DataTable();
-    $('.btn-delete').click(function() {
+    $(document).on('click', '.btn-delete', function() {
       $('#delete-btn').attr('action', $(this).attr('data-id'));
     });
   } );
