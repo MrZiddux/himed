@@ -76,7 +76,7 @@
 	<div class="container-fluid py-5">
 		<div class="container">
 			<h6 class="t-size t-semibold">Artikel <span class="t-size t-semibold t-color-primary">Terpopuler</span></h6>
-			<div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 align-items-center g-3">
+			<div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 align-items-center g-3" id="blog">
 				@foreach ($data as $item)
 				<div class="col">
 					<a href="/blogs/{{ $item->slug }}" class="text-decoration-none">

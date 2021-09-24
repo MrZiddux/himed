@@ -95,4 +95,9 @@ class Article extends Model
     {
         return $this->where('title', 'LIKE', '%'.$keyword.'%')->paginate($limit);
     }
+
+    public function offsetData($from, $limit)
+    {
+        return $this->offset($from)->limit($limit)->get();
+    }
 }

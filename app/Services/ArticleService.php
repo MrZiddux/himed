@@ -35,6 +35,11 @@ class ArticleService
     return $this->Article->limitData($limit);
   }
 
+  public function getOffsetData($from, $limit)
+  {
+    return $this->Article->offsetData($from, $limit);
+  }
+
   public function getPopularData()
   {
     return $this->Article->popularData();

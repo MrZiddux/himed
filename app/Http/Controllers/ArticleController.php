@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ArticleRequest;
 use Illuminate\Http\Request;
 use App\Services\ArticleService;
-
-
+use Symfony\Component\HttpFoundation\Response;
 
 class ArticleController extends Controller
 {
@@ -93,5 +92,11 @@ class ArticleController extends Controller
     {
         $this->articleService->deleteData($id);
         return redirect()->route('article.index');
+    }
+
+    public function getData($from, $limit)
+    {
+        $data = $this->articleService->getOffsetData($from, $limit);
+        return response()->json($data, Response::HTTP_OK);
     }
 }
